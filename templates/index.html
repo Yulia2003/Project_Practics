@@ -29,7 +29,7 @@
                 <button id="start-camera" class="btn btn-success">Запустить камеру</button>
                 <button id="stop-camera" class="btn btn-danger" style="display: none;">Остановить камеру</button>
             </div>
-            <div id="camera-error" class="mt-2 text-danger" style="display: none;"></div>
+            <div id="stream-error" class="mt-2 text-danger" style="display: none;"></div>
             <div id="live-stream-section" class="mt-4" style="display: none;">
                 <h4>Онлайн просмотр</h4>
                 <img id="live-stream" class="img-fluid border rounded" alt="Видеопоток">
@@ -79,8 +79,9 @@
         const intervalsList = document.getElementById('intervals');
         const liveStreamSection = document.getElementById('live-stream-section');
         const liveStreamImg = document.getElementById('live-stream');
+        const streamError = document.getElementById('stream-error');
 
-        // Очистка результатов
+        // Очистка результатов и ошибок
         status.innerHTML = '';
         maxPeople.textContent = '';
         uniquePeople.textContent = '';
@@ -88,6 +89,7 @@
         intervalsList.innerHTML = '';
         liveStreamSection.style.display = 'none';
         liveStreamImg.src = '';
+        streamError.style.display = 'none';
 
         loading.style.display = 'block';
 
@@ -121,8 +123,26 @@
                 liveStreamImg.src = `/Uploads/${encodeURIComponent(data.output_image)}`;
                 liveStreamSection.style.display = 'block';
             } else {
-                liveStreamImg.src = `/video_feed?filename=${encodeURIComponent(data.filename)}`;
+                const streamUrl = `/video_feed?filename=${encodeURIComponent(data.filename)}`;
+                liveStreamImg.src = streamUrl;
                 liveStreamSection.style.display = 'block';
+
+                // Проверка загрузки потока
+                liveStreamImg.onerror = () => {
+                    streamError.textContent = 'Ошибка: Не удалось загрузить видеопоток. Проверьте файл или сервер.';
+                    streamError.style.display = 'block';
+                    liveStreamImg.src = '';
+                    liveStreamSection.style.display = 'none';
+                };
+
+                // Повторная попытка через 2 секунды, если поток не загрузился
+                setTimeout(() => {
+                    if (!liveStreamImg.complete || liveStreamImg.naturalWidth === 0) {
+                        liveStreamImg.src = ''; // Сброс
+                        liveStreamImg.src = streamUrl; // Повторная попытка
+                        console.log('Повторная попытка загрузки потока:', streamUrl);
+                    }
+                }, 2000);
             }
 
             await loadHistory();
@@ -138,24 +158,34 @@
     const stopCameraBtn = document.getElementById('stop-camera');
     const liveStreamSection = document.getElementById('live-stream-section');
     const liveStreamImg = document.getElementById('live-stream');
-    const cameraError = document.getElementById('camera-error');
+    const streamError = document.getElementById('stream-error');
 
     startCameraBtn.addEventListener('click', () => {
-        liveStreamImg.src = '/camera_feed';
+        const streamUrl = '/camera_feed';
+        liveStreamImg.src = streamUrl;
         liveStreamSection.style.display = 'block';
         startCameraBtn.style.display = 'none';
         stopCameraBtn.style.display = 'inline-block';
-        cameraError.style.display = 'none';
+        streamError.style.display = 'none';
 
         // Проверка ошибки загрузки стрима
         liveStreamImg.onerror = () => {
-            cameraError.textContent = 'Ошибка: Не удалось запустить камеру. Проверьте доступность камеры.';
-            cameraError.style.display = 'block';
+            streamError.textContent = 'Ошибка: Не удалось запустить камеру. Проверьте доступность камеры.';
+            streamError.style.display = 'block';
             liveStreamImg.src = '';
             liveStreamSection.style.display = 'none';
             startCameraBtn.style.display = 'inline-block';
             stopCameraBtn.style.display = 'none';
         };
+
+        // Повторная попытка через 2 секунды, если поток не загрузился
+        setTimeout(() => {
+            if (!liveStreamImg.complete || liveStreamImg.naturalWidth === 0) {
+                liveStreamImg.src = ''; // Сброс
+                liveStreamImg.src = streamUrl; // Повторная попытка
+                console.log('Повторная попытка загрузки потока камеры:', streamUrl);
+            }
+        }, 2000);
     });
 
     stopCameraBtn.addEventListener('click', () => {
@@ -163,7 +193,7 @@
         liveStreamSection.style.display = 'none';
         startCameraBtn.style.display = 'inline-block';
         stopCameraBtn.style.display = 'none';
-        cameraError.style.display = 'none';
+        streamError.style.display = 'none';
     });
 
     async function loadHistory() {

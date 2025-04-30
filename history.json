@@ -1,0 +1,333 @@
+[
+    {
+        "timestamp": "2025-04-30T13:31:41.171070",
+        "video_filename": "test.mp4",
+        "max_people": 4,
+        "unique_people": 5,
+        "frame_count": 822,
+        "intervals": [
+            [
+                0,
+                262
+            ],
+            [
+                263,
+                268
+            ],
+            [
+                270,
+                299
+            ],
+            [
+                301,
+                310
+            ],
+            [
+                311,
+                822
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T13:37:45.524975",
+        "video_filename": "videoplayback.mp4",
+        "max_people": 1,
+        "unique_people": 1,
+        "frame_count": 445,
+        "intervals": [
+            [
+                362,
+                437
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T13:53:02.804200",
+        "video_filename": "test.mp4",
+        "max_people": 4,
+        "unique_people": 5,
+        "frame_count": 822,
+        "intervals": [
+            [
+                0,
+                262
+            ],
+            [
+                263,
+                268
+            ],
+            [
+                270,
+                299
+            ],
+            [
+                301,
+                310
+            ],
+            [
+                311,
+                822
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T13:59:21.141825",
+        "video_filename": "test.mp4",
+        "max_people": 4,
+        "unique_people": 5,
+        "frame_count": 822,
+        "intervals": [
+            [
+                0,
+                262
+            ],
+            [
+                263,
+                268
+            ],
+            [
+                270,
+                299
+            ],
+            [
+                301,
+                310
+            ],
+            [
+                311,
+                822
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T14:10:35.516564",
+        "video_filename": "test.mp4",
+        "max_people": 4,
+        "unique_people": 5,
+        "frame_count": 822,
+        "intervals": [
+            [
+                0,
+                262
+            ],
+            [
+                263,
+                268
+            ],
+            [
+                270,
+                299
+            ],
+            [
+                301,
+                310
+            ],
+            [
+                311,
+                822
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T14:15:07.585812",
+        "video_filename": "videoplayback.mp4",
+        "max_people": 1,
+        "unique_people": 3,
+        "frame_count": 445,
+        "intervals": [
+            [
+                162,
+                237
+            ],
+            [
+                337,
+                337
+            ],
+            [
+                337,
+                445
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T19:04:53.798372",
+        "video_filename": "magaz.mp4",
+        "max_people": 5,
+        "unique_people": 4,
+        "frame_count": 259,
+        "intervals": []
+    },
+    {
+        "timestamp": "2025-04-30T19:06:22.475108",
+        "video_filename": "test.mp4",
+        "max_people": 4,
+        "unique_people": 4,
+        "frame_count": 822,
+        "intervals": [
+            [
+                0,
+                262
+            ],
+            [
+                263,
+                268
+            ],
+            [
+                270,
+                299
+            ],
+            [
+                301,
+                310
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T19:25:53.446014",
+        "filename": "videoplayback.mp4",
+        "max_people": 1,
+        "unique_people": 2,
+        "frame_count": 445,
+        "intervals": [
+            [
+                162,
+                237
+            ],
+            [
+                337,
+                445
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T19:35:32.564399",
+        "filename": "videoplayback.mp4",
+        "max_people": 1,
+        "unique_people": 2,
+        "frame_count": 445,
+        "intervals": [
+            [
+                162,
+                237
+            ],
+            [
+                337,
+                445
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T21:57:38.180474",
+        "filename": "videoplayback.mp4",
+        "max_people": 1,
+        "unique_people": 2,
+        "frame_count": 445,
+        "intervals": [
+            [
+                162,
+                237
+            ],
+            [
+                337,
+                445
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T21:59:28.128182",
+        "filename": "test.mp4",
+        "max_people": 4,
+        "unique_people": 3,
+        "frame_count": 822,
+        "intervals": [
+            [
+                0,
+                262
+            ],
+            [
+                270,
+                299
+            ],
+            [
+                311,
+                822
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T22:04:38.645853",
+        "filename": "test.mp4",
+        "max_people": 4,
+        "unique_people": 3,
+        "frame_count": 822,
+        "intervals": [
+            [
+                0,
+                262
+            ],
+            [
+                270,
+                299
+            ],
+            [
+                311,
+                822
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T22:07:45.272748",
+        "filename": "test.mp4",
+        "max_people": 4,
+        "unique_people": 3,
+        "frame_count": 822,
+        "intervals": [
+            [
+                0,
+                262
+            ],
+            [
+                270,
+                299
+            ],
+            [
+                311,
+                822
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T22:11:21.880523",
+        "filename": "videoplayback.mp4",
+        "max_people": 1,
+        "unique_people": 2,
+        "frame_count": 445,
+        "intervals": [
+            [
+                162,
+                237
+            ],
+            [
+                337,
+                445
+            ]
+        ]
+    },
+    {
+        "timestamp": "2025-04-30T22:12:49.296761",
+        "filename": "videoplayback.mp4",
+        "max_people": 1,
+        "unique_people": 2,
+        "frame_count": 445,
+        "intervals": [
+            [
+                162,
+                237
+            ],
+            [
+                337,
+                445
+            ]
+        ]
+    }
+]
